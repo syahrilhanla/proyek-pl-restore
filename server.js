@@ -62,7 +62,6 @@ io.on("connection", (socket) => {
 			console.log("QR RECEIVED", qr);
 			qrcode.toDataURL(qr, (err, url) => {
 				socket.emit("qr", url);
-				socket.emit("message", "QR Code received, scan please!");
 			});
 		});
 	});

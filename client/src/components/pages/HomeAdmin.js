@@ -6,7 +6,7 @@ import { Navbar } from "../Navbar";
 import { Footer } from "../Footer";
 import Alerts from "../Alerts";
 import { socket } from "../socket";
-import { FormDialogWhatsapp } from "../FormDialogWhatsapp";
+import { FormDialogWhatsApp } from "../FormDialogWhatsApp";
 
 // Check if logged in
 export const checkLogin = (loginInfo) => {
@@ -30,6 +30,7 @@ export const HomeAdmin = () => {
 	const [alertColor, setAlertColor] = useState("");
 	const [alertText, setAlertText] = useState("");
 	const [open, setOpen] = useState(false);
+	// eslint-disable-next-line
 	const [showQr, setShowQr] = useState(true);
 
 	useEffect(() => {
@@ -39,6 +40,7 @@ export const HomeAdmin = () => {
 			console.log("borrowingList", borrowingList);
 		}, 5000);
 		getPictures();
+		// eslint-disable-next-line
 	}, [anyUpdate]);
 
 	socket.on("notification", (notification) => {
@@ -66,13 +68,13 @@ export const HomeAdmin = () => {
 							Lini Masa
 						</h1>
 					</label>
-					<div style={{ height: "470px", overflow: "auto" }}>
+					<div style={{ height: "71vh", overflow: "auto" }}>
 						{borrowingList.map((list) => (
 							<TimeLineCardNew key={list._id} borrowingList={list} />
 						))}
 					</div>
 				</div>
-				{showQr === true ? <FormDialogWhatsapp showQr={showQr} /> : null}
+				{showQr === true ? <FormDialogWhatsApp showQr={showQr} /> : null}
 			</>
 		);
 	};

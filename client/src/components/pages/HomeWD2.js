@@ -1,13 +1,13 @@
 import React, { useContext, useEffect, useState } from "react";
 import { GlobalContext } from "../globalState/GlobalState";
 import { Navbar } from "../Navbar";
-import { Redirect, useHistory } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 import { checkLogin } from "./HomeAdmin";
 import { TimeLineCardNew } from "../TimeLineCardNew";
 import { Footer } from "../Footer";
 import { socket } from "../socket";
 import Alerts from "../Alerts";
-import { FormDialogWhatsapp } from "../FormDialogWhatsapp";
+import { FormDialogWhatsApp } from "../FormDialogWhatsApp";
 
 export const HomeWD2 = () => {
 	const {
@@ -22,6 +22,7 @@ export const HomeWD2 = () => {
 	const [alertColor, setAlertColor] = useState("");
 	const [alertText, setAlertText] = useState("");
 	const [open, setOpen] = useState(false);
+	// eslint-disable-next-line
 	const [showQr, setShowQr] = useState(true);
 
 	useEffect(() => {
@@ -31,6 +32,7 @@ export const HomeWD2 = () => {
 			console.log("borrowingList", borrowingList);
 		}, 5000);
 		getPictures();
+		// eslint-disable-next-line
 	}, [anyUpdate]);
 
 	socket.on("notification", (notification) => {
@@ -51,7 +53,7 @@ export const HomeWD2 = () => {
 					<label>
 						<h1 style={{ borderBottom: "2px solid #b8bdb5" }}>Lini Masa</h1>
 					</label>
-					<div style={{ height: "470px", overflow: "auto" }}>
+					<div style={{ height: "71vh", overflow: "auto" }}>
 						{borrowingList
 							.filter((list) => list.status === 2)
 							.map((list) => (
@@ -59,7 +61,7 @@ export const HomeWD2 = () => {
 							))}
 					</div>
 				</div>
-				{showQr === true ? <FormDialogWhatsapp showQr={showQr} /> : null}
+				{showQr === true ? <FormDialogWhatsApp showQr={showQr} /> : null}
 			</>
 		);
 	};

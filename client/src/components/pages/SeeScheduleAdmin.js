@@ -1,25 +1,19 @@
 import React, { useContext, useEffect, useState } from "react";
 import { StickyHeadTableADM } from "../../components/StickyHeadTableADM";
-import { FormDialogDetails } from "../FormDialogDetails";
 import { GlobalContext } from "../globalState/GlobalState";
 import { Navbar } from "../Navbar";
-import { cardStyle } from "../TimeLineCardNew";
+import { Footer } from "../Footer";
 
 export const SeeScheduleAdmin = () => {
-	const {
-		childStates,
-		borrowingList,
-		getBorrowingData,
-		getLoginInfo,
-	} = useContext(GlobalContext);
+	const { childStates, getBorrowingData, getLoginInfo } = useContext(
+		GlobalContext
+	);
 	const [invisible, setInvisible] = useState(true);
-
-	// Decide status for FormDialogDetails:
-	const styles = cardStyle(borrowingList);
 
 	useEffect(() => {
 		getBorrowingData();
 		getLoginInfo();
+		// eslint-disable-next-line
 	}, [childStates.open]);
 
 	return (
@@ -27,15 +21,9 @@ export const SeeScheduleAdmin = () => {
 			<Navbar user={"adm"} invisible={invisible} setInvisible={setInvisible} />
 
 			<div className='container-schedule'>
-				{/* {childStates.open && (
-					<FormDialogDetails
-						borrowingList={childStates.selectedRow}
-						styles={styles}
-						open={childStates.open}
-					/>
-				)} */}
 				<StickyHeadTableADM />
 			</div>
+			<Footer />
 		</div>
 	);
 };
