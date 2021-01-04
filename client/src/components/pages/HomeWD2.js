@@ -7,7 +7,7 @@ import { TimeLineCardNew } from "../TimeLineCardNew";
 import { Footer } from "../Footer";
 import { socket } from "../socket";
 import Alerts from "../Alerts";
-import { FormDialogAhatsapp } from "../FormDialAgWhatsapp";
+import { FormDialogWhatsApp } from "../FormDialogWhatsApp";
 
 export const HomeWD2 = () => {
 	const {
