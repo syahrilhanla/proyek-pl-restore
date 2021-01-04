@@ -1,5 +1,5 @@
 import "./App.css";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as HashRouter, Switch, Route } from "react-router-dom";
 
 import HomeMHS from "./components/pages/HomeMHS";
 import { SeeScheduleAdmin } from "./components/pages/SeeScheduleAdmin";
@@ -17,7 +17,7 @@ function App() {
 	return (
 		<div className='mother-class'>
 			<GlobalProvider>
-				<Router>
+				<HashRouter>
 					<Switch>
 						<Route path='/' exact component={LoginPage} />
 						<Route path='/mhs' exact component={HomeMHS} />
@@ -33,7 +33,7 @@ function App() {
 						<Route path={`/adm/disposisi/:id`} exact component={Disposisi} />
 						<Route path={`/adm/:filename`} exact component={DisplayPicture} />
 					</Switch>
-				</Router>
+				</HashRouter>
 			</GlobalProvider>
 		</div>
 	);
