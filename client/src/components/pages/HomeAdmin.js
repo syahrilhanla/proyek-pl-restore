@@ -6,7 +6,7 @@ import { Navbar } from "../Navbar";
 import { Footer } from "../Footer";
 import Alerts from "../Alerts";
 import { socket } from "../socket";
-import { FormDialogWhatsApp } from "../FormDialogWhatsApp";
+import { FormDialogWhatsApp } from "./FormDialogWhatsApp";
 
 // Check if logged in
 export const checkLogin = (loginInfo) => {
