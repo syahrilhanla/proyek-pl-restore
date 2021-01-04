@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { GlobalContext } from "../globalState/GlobalState";
 import { Navbar } from "../Navbar";
-import { Redirect, useHistory } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 import { checkLogin } from "./HomeAdmin";
 import { TimeLineCardNew } from "../TimeLineCardNew";
 import { Footer } from "../Footer";
@@ -22,6 +22,7 @@ export const HomeWD2 = () => {
 	const [alertColor, setAlertColor] = useState("");
 	const [alertText, setAlertText] = useState("");
 	const [open, setOpen] = useState(false);
+	// eslint-disable-next-line
 	const [showQr, setShowQr] = useState(true);
 
 	useEffect(() => {
@@ -31,6 +32,7 @@ export const HomeWD2 = () => {
 			console.log("borrowingList", borrowingList);
 		}, 5000);
 		getPictures();
+		// eslint-disable-next-line
 	}, [anyUpdate]);
 
 	socket.on("notification", (notification) => {

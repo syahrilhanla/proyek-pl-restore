@@ -30,6 +30,7 @@ export const HomeAdmin = () => {
 	const [alertColor, setAlertColor] = useState("");
 	const [alertText, setAlertText] = useState("");
 	const [open, setOpen] = useState(false);
+	// eslint-disable-next-line
 	const [showQr, setShowQr] = useState(true);
 
 	useEffect(() => {
@@ -39,6 +40,7 @@ export const HomeAdmin = () => {
 			console.log("borrowingList", borrowingList);
 		}, 5000);
 		getPictures();
+		// eslint-disable-next-line
 	}, [anyUpdate]);
 
 	socket.on("notification", (notification) => {
