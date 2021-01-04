@@ -1,0 +1,4 @@
+{
+	"verbose": true,
+	"ignore": ["whatsapp-session.json"]
+}

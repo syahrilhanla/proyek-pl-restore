@@ -1,0 +1,16 @@
+.breadcrumb {
+    padding: 15px 20px;
+    background-color: rgb(233, 227, 227);
+    border: 1px rgb(182, 180, 180) solid;
+    border-radius: 4px;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-items: stretch;
+    justify-content: space-evenly;
+    min-width: 500px;
+}
+
+.breadcrumb h3 {
+    border-bottom: none;
+}

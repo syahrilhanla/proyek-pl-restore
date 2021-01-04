@@ -1,0 +1,101 @@
+.root {
+	padding: 0px;
+	box-sizing: border-box;
+	border: 1px solid black;
+	background-color: rgb(231, 228, 228);
+}
+
+.container-disposisi {
+	width: 768px;
+	background-color: white;
+	margin: 50px auto;
+	position: relative;
+	border: 1px solid black;
+	padding-left: 20px;
+	padding-bottom: 20px;
+}
+
+.header {
+	text-align: center;
+	width: 100%;
+	border-bottom: 1px solid black;
+	padding: 20px 0px 20px 0px;
+}
+
+.header h2 {
+	margin: 0px;
+}
+
+.title h2 {
+	font-size: 28px;
+	text-align: center;
+	padding-top: 10px;
+	padding-bottom: 20px;
+	margin: 0px auto;
+}
+
+.kop table tr {
+	width: 750px;
+	display: flex;
+	padding-right: 20px;
+}
+
+.kop td {
+	width: 100%;
+	margin-top: -3px;
+	border: 1px solid black;
+	border-collapse: collapse;
+	text-align: center;
+	padding: 7px;
+}
+
+.status {
+	display: flex;
+	flex-direction: row;
+}
+
+.status span {
+	width: 250px;
+	text-align: center;
+}
+
+.details tr {
+	padding: 5px;
+	border: 1px red solid;
+}
+
+.details td.long {
+	width: 130px;
+	margin-bottom: 7px;
+}
+
+.tableInput td,
+.tableInput th {
+	border: 1px solid black;
+	width: 200px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	border-collapse: collapse;
+}
+
+input[type="text"] {
+	width: 150px;
+	padding: none;
+	text-align: center;
+}
+
+.tableInput th {
+	text-transform: uppercase;
+}
+
+.tableInput tr {
+	flex-direction: row;
+}
+
+.tableInput {
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	padding-right: 15px;
+	margin: 20px 0px;
+}
