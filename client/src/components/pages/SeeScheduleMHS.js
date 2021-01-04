@@ -3,6 +3,7 @@ import { StickyHeadTable } from "../StickyHeadTable";
 import { GlobalContext } from "../globalState/GlobalState";
 import { Breadcrumb } from "../Breadcrumb";
 import { Navbar } from "../Navbar";
+import { Footer } from "../Footer";
 
 export const SeeScheduleMHS = () => {
 	const { loginInfo } = useContext(GlobalContext);
@@ -16,6 +17,7 @@ export const SeeScheduleMHS = () => {
 			<div className='container-schedule'>
 				<StickyHeadTable />
 			</div>
+			<Footer />
 		</>
 	);
 };

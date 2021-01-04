@@ -1,9 +1,9 @@
 import React, { useContext, useEffect, useState } from "react";
 import { StickyHeadTableADM } from "../../components/StickyHeadTableADM";
-import { FormDialogDetails } from "../FormDialogDetails";
 import { GlobalContext } from "../globalState/GlobalState";
 import { Navbar } from "../Navbar";
 import { cardStyle } from "../TimeLineCardNew";
+import { Footer } from "../Footer";
 
 export const SeeScheduleAdmin = () => {
 	const {
@@ -27,15 +27,9 @@ export const SeeScheduleAdmin = () => {
 			<Navbar user={"adm"} invisible={invisible} setInvisible={setInvisible} />
 
 			<div className='container-schedule'>
-				{/* {childStates.open && (
-					<FormDialogDetails
-						borrowingList={childStates.selectedRow}
-						styles={styles}
-						open={childStates.open}
-					/>
-				)} */}
 				<StickyHeadTableADM />
 			</div>
+			<Footer />
 		</div>
 	);
 };

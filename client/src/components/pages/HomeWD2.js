@@ -51,7 +51,7 @@ export const HomeWD2 = () => {
 					<label>
 						<h1 style={{ borderBottom: "2px solid #b8bdb5" }}>Lini Masa</h1>
 					</label>
-					<div style={{ height: "470px", overflow: "auto" }}>
+					<div style={{ height: "71vh", overflow: "auto" }}>
 						{borrowingList
 							.filter((list) => list.status === 2)
 							.map((list) => (

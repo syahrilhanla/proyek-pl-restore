@@ -66,7 +66,7 @@ export const HomeAdmin = () => {
 							Lini Masa
 						</h1>
 					</label>
-					<div style={{ height: "470px", overflow: "auto" }}>
+					<div style={{ height: "71vh", overflow: "auto" }}>
 						{borrowingList.map((list) => (
 							<TimeLineCardNew key={list._id} borrowingList={list} />
 						))}
