@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { GlobalContext } from "../globalState/GlobalState";
 import { Navbar } from "../Navbar";
-import { Redirect } from "react-router-dom";
+import { Redirect, useHistory } from "react-router-dom";
 import { checkLogin } from "./HomeAdmin";
 import { TimeLineCardNew } from "../TimeLineCardNew";
 import { Footer } from "../Footer";
@@ -16,7 +16,10 @@ export const HomeWD2 = () => {
 		getLoginInfo,
 		anyUpdate,
 		getPictures,
+		loginInfo,
 	} = useContext(GlobalContext);
+
+	const history = useHistory();
 
 	const [invisible, setInvisible] = useState(true);
 	const [alertColor, setAlertColor] = useState("");
@@ -69,7 +72,7 @@ export const HomeWD2 = () => {
 	return (
 		<>
 			<Navbar user={"adm"} invisible={invisible} setInvisible={setInvisible} />
-			<>{checkLogin ? <Home /> : <Redirect to='/' />}</>
+			{checkLogin(loginInfo, history) ? <Home /> : <Redirect to='/' />}
 			<Alerts isOpen={open} alertColor={alertColor} alertText={alertText} />
 			<Footer />
 		</>
