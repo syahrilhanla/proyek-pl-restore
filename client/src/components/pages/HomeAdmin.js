@@ -6,7 +6,7 @@ import { Navbar } from "../Navbar";
 import { Footer } from "../Footer";
 import Alerts from "../Alerts";
 import { socket } from "../socket";
-import { FormDialogWhatsapp } from "../FormDialogWhatsapp";
+import { FormDialogWhatsApp } from "../FormDialogWhatsApp";
 
 // Check if logged in
 export const checkLogin = (loginInfo) => {
@@ -74,7 +74,7 @@ export const HomeAdmin = () => {
 						))}
 					</div>
 				</div>
-				{showQr === true ? <FormDialogWhatsapp showQr={showQr} /> : null}
+				{showQr === true ? <FormDialogWhatsApp showQr={showQr} /> : null}
 			</>
 		);
 	};

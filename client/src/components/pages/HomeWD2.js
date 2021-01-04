@@ -7,7 +7,7 @@ import { TimeLineCardNew } from "../TimeLineCardNew";
 import { Footer } from "../Footer";
 import { socket } from "../socket";
 import Alerts from "../Alerts";
-import { FormDialogWhatsapp } from "../FormDialogWhatsapp";
+import { FormDialogWhatsApp } from "../FormDialogWhatsApp";
 
 export const HomeWD2 = () => {
 	const {
@@ -61,7 +61,7 @@ export const HomeWD2 = () => {
 							))}
 					</div>
 				</div>
-				{showQr === true ? <FormDialogWhatsapp showQr={showQr} /> : null}
+				{showQr === true ? <FormDialogWhatsApp showQr={showQr} /> : null}
 			</>
 		);
 	};
