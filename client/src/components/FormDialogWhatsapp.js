@@ -3,7 +3,7 @@ import Dialog from "@material-ui/core/Dialog";
 import { makeStyles } from "@material-ui/core";
 import { socket } from "./socket";
 
-export function FormDialogWhatsApp({ showQr }) {
+export function FormDialogWhatsapp({ showQr }) {
 	const [isOpen, setIsOpen] = useState(false);
 	const [src, setSrc] = useState("");
 	const [show, setShow] = useState(false);
