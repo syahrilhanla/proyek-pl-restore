@@ -61,7 +61,7 @@ const AppReducer = (state, action) => {
 		case "SEARCH_DATA":
 			return {
 				...state,
-				searchData: [action.payload],
+				searchData: action.payload,
 			};
 
 		default:

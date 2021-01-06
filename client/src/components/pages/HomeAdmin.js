@@ -26,6 +26,7 @@ export const HomeAdmin = () => {
 		anyUpdate,
 		getPictures,
 		loginInfo,
+		searchData,
 	} = useContext(GlobalContext);
 
 	const history = useHistory();
@@ -59,26 +60,54 @@ export const HomeAdmin = () => {
 		setOpen(true);
 	});
 
+	const HomeNormal = () => {
+		return (
+			<div className='container'>
+				<label>
+					<h1
+						style={{
+							borderBottom: "2px solid #b8bdb5",
+							marginTop: "-20px",
+						}}
+					>
+						Lini Masa
+					</h1>
+				</label>
+				<div style={{ height: "71vh", overflow: "auto" }}>
+					{borrowingList.map((list) => (
+						<TimeLineCardNew key={list._id} borrowingList={list} />
+					))}
+				</div>
+			</div>
+		);
+	};
+
+	const SearchResults = () => {
+		return (
+			<div className='container'>
+				<label>
+					<h1
+						style={{
+							borderBottom: "2px solid #b8bdb5",
+							marginTop: "-20px",
+						}}
+					>
+						Lini Masa
+					</h1>
+				</label>
+				<div style={{ height: "71vh", overflow: "auto" }}>
+					{searchData.map((list) => (
+						<TimeLineCardNew key={list._id} borrowingList={list} />
+					))}
+				</div>
+			</div>
+		);
+	};
+
 	const Home = () => {
 		return (
 			<>
-				<div className='container'>
-					<label>
-						<h1
-							style={{
-								borderBottom: "2px solid #b8bdb5",
-								marginTop: "-20px",
-							}}
-						>
-							Lini Masa
-						</h1>
-					</label>
-					<div style={{ height: "71vh", overflow: "auto" }}>
-						{borrowingList.map((list) => (
-							<TimeLineCardNew key={list._id} borrowingList={list} />
-						))}
-					</div>
-				</div>
+				{searchData.length < 1 ? <HomeNormal /> : <SearchResults />}
 				{showQr === true ? <FormDialogWhatsApp showQr={showQr} /> : null}
 			</>
 		);
