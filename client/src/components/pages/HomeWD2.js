@@ -39,6 +39,7 @@ export const HomeWD2 = () => {
 	}, [anyUpdate]);
 
 	socket.on("notification", (notification) => {
+		getBorrowingData();
 		setAlertColor("error");
 		setAlertText(`Terdapat Pembaruan, Halaman Telah Diperbarui!`);
 		setInvisible(false);
