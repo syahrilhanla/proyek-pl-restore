@@ -1,2 +1,5 @@
-# proyek-pl-8f22799803b0c1e051dab9e279425f92f9eb6768
-Reupload from deleted repo
+# proyek-pl-restore
+#Reupload from deleted proyek-pl repo
+
+Make sure your browser's JavaScript is activated
+https://dry-forest-72149.herokuapp.com/
