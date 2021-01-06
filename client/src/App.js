@@ -12,6 +12,7 @@ import { LoginPage } from "./components/pages/LoginPage";
 import { HomeWD2 } from "./components/pages/HomeWD2";
 import { Disposisi } from "./components/pages/Disposisi";
 import { DisplayPicture } from "./components/pages/DisplayPicture";
+import { SearchData } from "./components/SearchData";
 
 function App() {
 	return (
@@ -20,6 +21,7 @@ function App() {
 				<HashRouter>
 					<Switch>
 						<Route path='/' exact component={LoginPage} />
+						<Route path='/search-data' exact component={SearchData} />
 						<Route path='/mhs' exact component={HomeMHS} />
 						<Route path='/adm' exact component={HomeAdmin} />
 						<Route path='/wd-2' exact component={HomeWD2} />
