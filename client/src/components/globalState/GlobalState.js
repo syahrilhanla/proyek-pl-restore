@@ -63,6 +63,11 @@ const AppReducer = (state, action) => {
 				...state,
 				searchData: action.payload,
 			};
+		case "CLEAR_SEARCH_DATA":
+			return {
+				...state,
+				searchData: [],
+			};
 
 		default:
 			return state;
@@ -360,6 +365,12 @@ export const GlobalProvider = ({ children }) => {
 		}
 	};
 
+	const clearSearchData = async () => {
+		dispatch({
+			type: "CLEAR_SEARCH_DATA",
+		});
+	};
+
 	return (
 		<GlobalContext.Provider
 			value={{
@@ -382,6 +393,7 @@ export const GlobalProvider = ({ children }) => {
 				getChildStates,
 				getPictures,
 				getSearchData,
+				clearSearchData,
 			}}
 		>
 			{children}

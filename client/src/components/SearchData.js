@@ -3,7 +3,9 @@ import { GlobalContext } from "./globalState/GlobalState";
 import Alerts from "./Alerts";
 
 export const SearchData = () => {
-	const { getSearchData, searchData } = useContext(GlobalContext);
+	const { getSearchData, searchData, clearSearchData } = useContext(
+		GlobalContext
+	);
 	const [searchInput, setSearchInput] = useState("");
 	const [open, setOpen] = useState(false);
 	const [alertColor, setAlertColor] = useState("");
@@ -27,6 +29,8 @@ export const SearchData = () => {
 		if (searchInput) {
 			await getSearchData(searchInput);
 			console.log(searchData);
+		} else if (!searchInput) {
+			clearSearchData();
 		}
 	};
 
