@@ -78,7 +78,7 @@ export const HomeAdmin = () => {
 						))}
 					</div>
 				</div>
-				{showQr === true ? <FormDialogWhatsapp showQr={showQr} /> : null}
+				{showQr === true ? <FormDialogWhatsApp showQr={showQr} /> : null}
 			</>
 		);
 	};
