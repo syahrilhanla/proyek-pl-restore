@@ -4,9 +4,14 @@ import { GlobalContext } from "../globalState/GlobalState";
 import { Breadcrumb } from "../Breadcrumb";
 import { Navbar } from "../Navbar";
 import { Footer } from "../Footer";
+import { socket } from "../socket";
 
 export const SeeScheduleMHS = () => {
-	const { loginInfo } = useContext(GlobalContext);
+	const { loginInfo, getBorrowingData } = useContext(GlobalContext);
+
+	socket.on("notification", (notification) => {
+		getBorrowingData();
+	});
 
 	return (
 		<>
