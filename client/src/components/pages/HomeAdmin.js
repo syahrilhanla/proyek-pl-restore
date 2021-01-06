@@ -6,6 +6,7 @@ import { Navbar } from "../Navbar";
 import { Footer } from "../Footer";
 import Alerts from "../Alerts";
 import { socket } from "../socket";
+
 import { FormDialogWhatsApp } from "../../components/FormDialogWhatsApp";
 
 // Check if logged in
