@@ -10,6 +10,7 @@ import { Dropdown } from "./Dropdown";
 import { GlobalContext } from "./globalState/GlobalState";
 import logo from "../assets/logo.png";
 import { socket } from "./socket";
+import { SearchData } from "./SearchData";
 
 export const Navbar = ({ user, invisible, setInvisible }) => {
 	const [click, setClick] = useState(false);
@@ -108,6 +109,13 @@ export const Navbar = ({ user, invisible, setInvisible }) => {
 					<i className={click ? "fas fa-times" : "fas fa-bars"} />
 				</div>
 
+				{user === "mhs" ? null : (
+					<li className='nav-item'>
+						<SearchData />
+					</li>
+				)}
+
+				{/* if user is 'mhs' then no notification bell is showed*/}
 				<ul className={click ? "nav-menu active" : "nav-menu"}>
 					{user === "mhs" ? null : (
 						<li className='nav-item' onClick={() => showNotification()}>
