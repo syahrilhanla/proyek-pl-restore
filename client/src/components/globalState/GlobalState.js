@@ -58,6 +58,11 @@ const AppReducer = (state, action) => {
 				...state,
 				borrowingList: [...state.borrowingList, action.payload],
 			};
+		case "SEARCH_DATA":
+			return {
+				...state,
+				searchData: [action.payload],
+			};
 
 		default:
 			return state;
@@ -71,6 +76,7 @@ const initialState = {
 	childStates: [],
 	loggedIn: [],
 	pictures: [],
+	searchData: [],
 };
 
 export const GlobalContext = createContext(initialState);
@@ -338,6 +344,20 @@ export const GlobalProvider = ({ children }) => {
 		}
 	};
 
+	const getSearchData = async (searchData) => {
+		try {
+			const results = state.borrowingList.filter(
+				(list) => list.name === searchData
+			);
+			dispatch({
+				type: "SEARCH_DATA",
+				payload: results,
+			});
+		} catch (err) {
+			console.log(err);
+		}
+	};
+
 	return (
 		<GlobalContext.Provider
 			value={{
@@ -348,6 +368,7 @@ export const GlobalProvider = ({ children }) => {
 				loggedIn: state.loggedIn,
 				pictures: state.pictures,
 				anyUpdate,
+				searchData: state.searchData,
 				addNewBorrowing,
 				takeLoginInfo,
 				getBorrowingData,
@@ -358,6 +379,7 @@ export const GlobalProvider = ({ children }) => {
 				getLoginInfo,
 				getChildStates,
 				getPictures,
+				getSearchData,
 			}}
 		>
 			{children}
