@@ -346,9 +346,11 @@ export const GlobalProvider = ({ children }) => {
 
 	const getSearchData = async (searchData) => {
 		try {
-			const results = state.borrowingList.filter(
-				(list) => list.name === searchData
+			// const pattern = /`${searchData}`/gi;
+			const results = state.borrowingList.filter((list) =>
+				list.name.includes(searchData)
 			);
+
 			dispatch({
 				type: "SEARCH_DATA",
 				payload: results,
