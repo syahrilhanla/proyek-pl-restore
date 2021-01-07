@@ -46,7 +46,7 @@ export const SearchData = () => {
 		minWidth: "60vh",
 		borderRadius: "6px",
 		border: "none",
-		marginLeft: "60px",
+		marginLeft: "170px",
 	};
 
 	return (

@@ -39,6 +39,19 @@ const columns = [
 		format: (value) => value.toLocaleString("en-US"),
 	},
 	{
+		id: "name",
+		label: "Nama",
+		minWidth: 130,
+		align: "center",
+		format: (value) => value.toLocaleString("en-US"),
+	},
+	{
+		id: "phoneNum",
+		label: "No. Tlp",
+		minWidth: 130,
+		align: "center",
+	},
+	{
 		id: "deleteAction",
 		label: "Aksi",
 		minWidth: 10,
@@ -47,13 +60,24 @@ const columns = [
 	},
 ];
 
-function createData(usage, status, room, startDate, time, deleteAction) {
+function createData(
+	usage,
+	status,
+	room,
+	startDate,
+	time,
+	name,
+	phoneNum,
+	deleteAction
+) {
 	return {
 		usage: usage,
 		status: status,
 		room: room,
 		startDate: startDate,
 		time: time,
+		name: name,
+		phoneNum: phoneNum,
 		deleteAction: deleteAction,
 	};
 }
@@ -134,6 +158,8 @@ export const StickyHeadTableADM = () => {
 			content.room,
 			content.startDate,
 			content.time,
+			content.name,
+			"0" + content.phoneNum,
 			<button
 				onClick={() => deleteBorrowingData(content._id, content.fileName)}
 				style={buttonDelete}
@@ -153,6 +179,7 @@ export const StickyHeadTableADM = () => {
 	};
 
 	const showDetails = (row) => {
+		console.log(row);
 		setSelectedRow(row);
 		setOpen(!open);
 	};
